@@ -1,0 +1,83 @@
+2. ping 8.8.8.8
+
+The ping command sends ICMP Echo Request packets to a target host to test network connectivity.
+
+The IP address 8.8.8.8 belongs to Google Public DNS and is commonly used because it is reliable and almost always reachable.
+
+The objective of running this command is to verify that the Kali Linux VM has internet access and can communicate with external networks.
+
+2.1. traceroute 8.8.8.8
+
+The traceroute command shows the path that packets take from the Kali Linux VM to the destination IP.
+
+It takes multiple hops to reach Google’s DNS server; in this case, it took 13 hops, depending on the network path and ISP routing.
+
+Each line represents a router (hop) between the source and destination, including the response time for that hop.
+
+3. IP Addresses of Kali and Windows
+
+The IP address of the Kali Linux VM was identified using the ip a command.
+
+The IP address of the Windows host machine was identified using the ipconfig command.
+
+A ping test was performed between the two machines.
+
+Communication depends on the VirtualBox network mode used; it is usually not possible in NAT mode but works in Bridged mode.
+
+4. VirtualBox Network Modes (NAT vs Bridged)
+
+NAT mode allows the VM to access the internet but prevents direct communication with the host.
+
+Bridged Adapter mode connects the VM directly to the same network as the host.
+
+The VM is able to ping the host machine and vice versa when using Bridged Adapter mode.
+
+This happens because both machines receive IP addresses from the same network and can communicate directly.
+
+5. XAMPP Installation on Windows
+
+XAMPP was successfully installed on the Windows machine.
+
+Apache and MySQL services were started from the XAMPP Control Panel.
+
+The local web server environment was confirmed to be running correctly.
+
+6. Accessing the XAMPP Default Web Page
+
+The local web server was accessed using http://localhost.
+
+The IP address 127.0.0.1 was also used to access the server.
+
+These addresses point to the local machine itself (loopback interface).
+
+7. Modifying the XAMPP index.html File
+
+The index.html file located in C:\xampp\htdocs\ was edited.
+
+The full name of the user was added to the page.
+
+The page was refreshed in the browser to verify the change.
+
+The modification was displayed successfully on the web page.
+
+8. Accessing XAMPP from Kali Linux
+
+An attempt was made to access the XAMPP web server from Kali Linux using the Windows host IP address.
+
+Access was successful only when the VM network mode was set to Bridged Adapter.
+
+In NAT mode, access failed due to network isolation.
+
+Disabling or allowing Apache through the Windows Firewall was necessary to allow external access.
+
+Apache had to be running and both machines needed to be on the same network.
+
+9. Nmap Scan of the Windows Host
+
+The nmap -sV <IP_of_Host> command was used from Kali Linux.
+
+Open ports such as port 80 (HTTP) were detected.
+
+The web server was identified as Apache with its version displayed.
+
+The database server (MySQL) was detected on port 3306 with its version information, if accessible.
