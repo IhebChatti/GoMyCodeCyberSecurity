@@ -20,19 +20,11 @@ The IP address of the Kali Linux VM was identified using the ip a command.
 
 The IP address of the Windows host machine was identified using the ipconfig command.
 
-A ping test was performed between the two machines.
-
 Communication depends on the VirtualBox network mode used; it is usually not possible in NAT mode but works in Bridged mode.
 
 4. VirtualBox Network Modes (NAT vs Bridged)
 
-NAT mode allows the VM to access the internet but prevents direct communication with the host.
-
-Bridged Adapter mode connects the VM directly to the same network as the host.
-
-The VM is able to ping the host machine and vice versa when using Bridged Adapter mode.
-
-This happens because both machines receive IP addresses from the same network and can communicate directly.
+USING LINUX DIRECTLY NO VIRTUALBOX TO TEST with
 
 5. XAMPP Installation on Windows
 
@@ -62,22 +54,8 @@ The modification was displayed successfully on the web page.
 
 8. Accessing XAMPP from Kali Linux
 
-An attempt was made to access the XAMPP web server from Kali Linux using the Windows host IP address.
-
-Access was successful only when the VM network mode was set to Bridged Adapter.
-
-In NAT mode, access failed due to network isolation.
-
-Disabling or allowing Apache through the Windows Firewall was necessary to allow external access.
-
-Apache had to be running and both machines needed to be on the same network.
+USING LINUX DIRECTLY NO VIRTUALBOX TO TEST with
 
 9. Nmap Scan of the Windows Host
 
-The nmap -sV <IP_of_Host> command was used from Kali Linux.
-
-Open ports such as port 80 (HTTP) were detected.
-
-The web server was identified as Apache with its version displayed.
-
-The database server (MySQL) was detected on port 3306 with its version information, if accessible.
+USING LINUX DIRECTLY NO VIRTUALBOX TO TEST with
